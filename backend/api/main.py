@@ -1,15 +1,10 @@
 from fastapi import FastAPI
-from routes import router
+from backend.api.routes import router
 
-app = FastAPI(
-    title="AcousticSpace API",
-    version="1.0.0"
-)
+app = FastAPI(title="AcousticSpace API")
 
 app.include_router(router)
 
 @app.get("/")
-def home():
-    return {
-        "message": "AcousticSpace Backend is Running 🚀"
-    }
+def health_check():
+    return {"status": "AcousticSpace API is running"}
