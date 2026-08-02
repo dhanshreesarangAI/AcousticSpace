@@ -1,10 +1,37 @@
-.navbar{
-    background:#1e293b;
-    color:white;
-    padding:18px;
-    text-align:center;
+.navbar {
+    background: #6d9ae1;
+    color: white;
+    padding: 15px 30px;
+font-family:Georgia, 'Times New Roman', Times, serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.navbar h1{
-    margin:0;
+.navbar h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.history-btn {
+    border: none;
+    background: transparent;
+
+    color: white;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    padding: 9px 16px;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+}
+
+.history-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+h1{
+    font-family:Georgia, 'Times New Roman', Times, serif;
 }

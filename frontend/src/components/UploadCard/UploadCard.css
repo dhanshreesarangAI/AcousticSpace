@@ -1,0 +1,105 @@
+/* Upload Card */
+.card {
+    width: 100%;
+    max-width: 650px;
+    margin: 30px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Heading */
+.card h2 {
+    margin-bottom: 10px;
+}
+
+/* Description */
+.card > p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* File chooser */
+#audioInput {
+    display: block;
+    width: 100%;
+    margin: 25px 0;
+    padding: 12px;
+    border: 2px dashed #cfcfcf;
+    border-radius: 10px;
+    background: #fafafa;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+/* Selected file */
+.file-info {
+    margin: 15px 0;
+    padding: 15px;
+    background: #f7f7f7;
+    border-radius: 10px;
+}
+
+.file-info p {
+    margin: 5px 0;
+}
+
+.file-info strong {
+    color: #333;
+}
+
+/* Audio player */
+.file-info audio {
+    width: 100%;
+    margin-top: 12px;
+}
+
+/* Buttons */
+.card button {
+    margin-top: 15px;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 8px;
+    background: #111827;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+/* Button hover */
+.card button:hover {
+    transform: translateY(-1px);
+    opacity: 0.9;
+}
+
+/* Disabled Analyze button */
+.card button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Error */
+.error-message {
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 8px;
+    background: #fff1f1;
+    color: #d32f2f;
+    font-weight: 500;
+}
+
+/* Loading */
+.card > p:last-of-type {
+    margin-top: 12px;
+    font-weight: 500;
+}
+
+/* Reset button */
+.card button:last-child {
+    margin-left: 10px;
+    background: #6b7280;
+}

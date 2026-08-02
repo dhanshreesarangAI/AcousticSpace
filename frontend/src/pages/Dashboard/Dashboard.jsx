@@ -1,7 +1,7 @@
 import "./Dashboard.css";
 import UploadCard from "../../components/UploadCard/UploadCard";
 
-function Dashboard() {
+function Dashboard({ onAnalysisComplete }) {
 
   return (
     <div className="dashboard">
@@ -11,7 +11,9 @@ function Dashboard() {
         <p>AI Powered Deepfake Audio Detection</p>
       </header>
 
-      <UploadCard />
+      <UploadCard
+        onAnalysisComplete={onAnalysisComplete}
+      />
 
     </div>
   );
