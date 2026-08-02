@@ -5,6 +5,14 @@ from backend.api.schemas_auth import UserCreate, Token
 from backend.api.auth import hash_password, verify_password, create_access_token, get_current_user
 from fastapi import APIRouter, UploadFile, File, HTTPException, Depends
 from backend.api.schemas import AnalyzeResponse
+import sys
+import os
+import tempfile
+
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.append(os.path.join(PROJECT_ROOT, "backend", "pipeline"))
+sys.path.append(os.path.join(PROJECT_ROOT, "backend", "models"))
+from predict import predict_audio
 
 router = APIRouter()
 @router.post("/register", response_model=Token)
@@ -47,13 +55,18 @@ async def analyze_audio(file: UploadFile = File(...), current_user: User = Depen
     if len(audio_bytes) > MAX_FILE_SIZE_BYTES:
         raise HTTPException(status_code=413, detail=f"File exceeds {MAX_FILE_SIZE_MB}MB limit")
 
-    # TODO: replace this stub once Dhanshree's pipeline/model are ready
-    # 1. Save/pass audio_bytes to backend/pipeline/audio_loader.py
-    # 2. Extract RIR + breathing features
-    # 3. Run through the AST classifier in backend/models/
+    with tempfile.NamedTemporaryFile(delete=False, suffix=ext) as tmp:
+        tmp.write(audio_bytes)
+        tmp_path = tmp.name
+
+    try:
+        result = predict_audio(tmp_path)
+    finally:
+        os.remove(tmp_path)
+
     return AnalyzeResponse(
-        prediction="DEEPFAKE",
-        confidence_score=87.4,
-        rir_mismatch="HIGH",
-        breathing="UNNATURAL"
+        prediction=result["prediction"],
+        confidence_score=result["confidence_score"],
+        rir_mismatch=result["rir_mismatch"],
+        breathing=result["breathing"]
     )
