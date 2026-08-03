@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  acousticspace-api:
+    build: .
+    container_name: acousticspace
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app/backend
+      - ./data:/app/data
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: always

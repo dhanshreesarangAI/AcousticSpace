@@ -1,0 +1,96 @@
+.history-card {
+    width: 100%;
+    max-width: 650px;
+    margin: 30px auto;
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.history-header h2 {
+    margin: 0;
+}
+
+.history-header button {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 7px;
+    background: #6b7280;
+    color: white;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.history-header button:hover {
+    opacity: 0.85;
+}
+
+.empty-history {
+    text-align: center;
+    padding: 25px 0;
+    color: #777;
+}
+
+.history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.history-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.history-file {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex: 1;
+    min-width: 0;
+}
+
+.history-file strong {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.history-file span {
+    font-size: 12px;
+    color: #777;
+}
+
+.history-prediction {
+    font-weight: 700;
+}
+
+.history-prediction.green {
+    color: green;
+}
+
+.history-prediction.red {
+    color: red;
+}
+
+.history-confidence {
+    font-weight: 600;
+}
+h2{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}

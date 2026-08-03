@@ -1,0 +1,58 @@
+.history-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 1000;
+}
+
+.history-sidebar {
+    position: fixed;
+    top: 0;
+    right: -430px;
+
+    width: 400px;
+    max-width: 90vw;
+    height: 100vh;
+
+    background: white;
+
+    z-index: 1001;
+
+    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.2);
+
+    transition: right 0.3s ease;
+
+    overflow-y: auto;
+}
+
+.history-sidebar.open {
+    right: 0;
+}
+
+.history-sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 20px;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.history-sidebar-header h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.close-history {
+    border: none;
+    background: transparent;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.history-sidebar .history-card {
+    width: auto;
+    margin: 20px;
+    box-shadow: none;
+}
