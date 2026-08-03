@@ -1,8 +1,4 @@
-from pydantic import BaseModel, Field
-
-
-class AnalyzeRequest(BaseModel):
-    file: str = Field(..., description="Filename or path of the uploaded audio file")
+from pydantic import BaseModel
 
 
 class AnalyzeResponse(BaseModel):
