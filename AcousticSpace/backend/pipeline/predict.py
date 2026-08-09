@@ -3,7 +3,7 @@ sys.path.append('../models')
 from audio_loader import load_audio
 from feature_extractor import extract_all_features
 from breathing_detector import analyze_breathing_pattern
-from breathing_cadence import analyze_cadence_alignment
+from breathing_cadence import check_cadence_alignment
 from model import AcousticSpaceModel
 
 def predict_audio(file_path):
@@ -23,7 +23,7 @@ def predict_audio(file_path):
     breathing = analyze_breathing_pattern(audio, sr)
 
     # Step 4 — Analyze cadence alignment
-    cadence = analyze_cadence_alignment(file_path)
+    cadence = check_cadence_alignment(audio, sr)
 
     # Step 5 — Get model prediction
     model = AcousticSpaceModel()
